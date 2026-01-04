@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -53,7 +55,14 @@
         <div id="weatherResult"></div>
     </div>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+            .then(() => console.log("Service Worker Registered"))
+            .catch((err) => console.log("Service Worker Failed", err));
+        }
+    </script>
+    <script src="./weather.js"></script>
 </body>
-<script src="./weather.js"></script>
 
 </html>
