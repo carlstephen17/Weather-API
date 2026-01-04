@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+
+        <div class="input-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" placeholder="e.g., Quezon City">
+        </div>
+
+        <div class="input-group">
+            <label for="province">State/Province <span class="optional">(optional)</span></label>
+            <input type="text" id="province" placeholder="e.g., National Capital Region">
+        </div>
+
+        <div class="input-group">
+            <label for="country">Country Code *</label>
+            <input type="text" id="country" placeholder="e.g., PH" maxlength="2">
+        </div>
+
+        <div class="input-group">
+            <label for="lat">Latitude <span class="optional">(optional)</span></label>
+            <input type="text" id="lat" placeholder="e.g., 14.6760">
+        </div>
+
+        <div class="input-group">
+            <label for="lon">Longitude <span class="optional">(optional)</span></label>
+            <input type="text" id="lon" placeholder="e.g., 121.0437">
+        </div>
+
+        <div class="input-group">
+            <label for="excludeSelect">Data to Show</label>
+            <select id="excludeSelect">
+                <option value="">All Data</option>
+                <option value="minutely,hourly,alerts">Current & Daily Only</option>
+                <option value="current,minutely,hourly,alerts">Daily Only</option>
+                <option value="minutely,hourly,daily,alerts">Current Only</option>
+            </select>
+        </div>
+
+        <button onclick="getWeather()">Get Weather</button>
+
+        <div id="weatherResult"></div>
+    </div>
+
+</body>
+<script src="weather.js"></script>
+
+</html>
